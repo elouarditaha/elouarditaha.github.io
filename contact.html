@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aviation Artistry</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <style>
+    body {
+    background-color: #f0f4f8;
+    }
+    .containers {
+    max-width: 1200px;
+    margin: auto;
+    padding: 2rem;
+    flex: 1;
+    }
+
+/* Contact Section */
+    .contact-section {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+     h1 {
+    font-size: 2.5rem;
+    color: #003366;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    }
+    label {
+        font-family: "Inter", sans-serif;
+    }
+
+    .form-group {
+    margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #333;
+    }
+
+    .form-group input,
+    .form-group textarea {
+    width: 100%;
+    padding: 1rem; /* Increased padding for a larger input area */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1.1rem; /* Increased font size for better readability */
+    color: #333;
+    box-sizing: border-box; /* Ensures padding does not affect the total width */
+    transition: border-color 0.3s ease;
+    }
+
+    .form-group textarea {
+    height: 150px; /* Set a default height for the textarea */
+    resize: vertical; /* Allows resizing vertically only */
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+    border-color: #0056b3;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 86, 179, 0.3); /* Adds a subtle shadow effect when focused */
+    }
+
+    button {
+    background-color: #0056b3;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    button:hover {
+    background-color: #004080;
+    transform: translateY(-2px);
+    }
+
+    button:focus,
+    button:active {
+    outline: none;
+    box-shadow: none;
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="./Black_And_Blue_Modern_Typography_Travel_Agency_Logo-removebg-preview (1).png" alt="Aerospace Engineering Blog Logo">
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="containers">
+        <h1>Contact Us</h1>
+        <form action="/contact" method="post">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea id="description" name="description" required></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit">Send Message</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>

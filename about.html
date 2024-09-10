@@ -1,0 +1,222 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aviation Artistry</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <style>
+/* Main Container */
+body{
+    background-color: #f0f4f8;
+}
+.mt-4 {
+    max-width: 1200px;
+    margin: auto;
+    padding: 2rem;
+    flex: 1;
+}
+
+/* About Section */
+.about-section {
+    padding: 2rem 0;
+}
+
+/* About Header */
+.about-header {
+    margin-bottom: 2rem;
+}
+
+.about-header h2 {
+    font-size: 2.5rem;
+    color: #003366;
+    margin: 1rem 0;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+}
+
+/* About Image */
+.about-img {
+    max-width: 200px;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* About Content */
+.about-content {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.about-content h3{
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    padding: 20px 0 20px 0;
+}
+.about-content p {
+    font-family: "Inter", sans-serif;
+}
+
+/* Team Section */
+.team {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.team-member {
+    flex: 1 1 calc(33.333% - 1rem);
+    background: #ffffff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    background-color: #f0f4f8;
+}
+
+/* Team Image */
+.team-img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    transition: border 0.3s ease;
+}
+
+/* Team Member Text */
+.team-member h4 {
+    color: #003366;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.team-member p {
+    font-size: 0.875rem;
+    color: #555;
+}
+
+.team-member p:first-of-type {
+    font-weight: bold;
+}
+
+/* Button */
+.btn-primary {
+    background-color: #0056b3;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary:hover {
+    background-color: #004080;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary:focus, .btn-primary:active {
+    box-shadow: none;
+}
+
+.btn-primary::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+    transform: translate(-50%, -50%) scale(0);
+}
+
+.btn-primary:hover::after {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="./Black_And_Blue_Modern_Typography_Travel_Agency_Logo-removebg-preview (1).png" alt="Aerospace Engineering Blog Logo">
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="container mt-4">
+        <section class="about-section">
+            <div class="about-header text-center">
+                <h2>About Us</h2>
+            </div>
+            <div class="about-content">
+                <h3>Welcome to Our Aviation Artistry Division</h3>
+                <p>
+                    At <b>Aviation Artistry</b> , we are at the forefront of aerospace innovation and research. Our team is dedicated to advancing the field of aerospace engineering through cutting-edge technology and rigorous research.
+                </p>
+                <p>
+                    Our expertise spans across various domains, including spacecraft design, propulsion systems, aerodynamics, and space exploration. We pride ourselves on our commitment to excellence and our ability to tackle complex engineering challenges.
+                </p>
+                <h3>Meet Our Team</h3>
+                <div class="team">
+                    <div class="team-member">
+                        <img src="./Taha.jpg" alt="Taha Eloaurdi" class="team-img">
+                        <h4>Taha El Ouardi</h4>
+                        <p>Host</p>
+                        <p>Taha El Ouardi is the lead host and brings extensive knowledge and experience in aerospace engineering to our team. His passion for innovation drives our projects forward.</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="./MedAmine.jpg" alt="Amin Bouaafia" class="team-img">
+                        <h4>Mohammed Amine Bouaafia</h4>
+                        <p>Developer</p>
+                        <p>Mohammed Amine Bouaafia is specialized in website development, tool creation, and penetration testing, blending creativity with technical expertise to deliver secure, innovative solutions.</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="./Adam.jpg" alt="Adam Bourima" class="team-img">
+                        <h4>Adam Bourima</h4>
+                        <p>Developer</p>
+                        <p>Adam Bourima is a talented back-end developer who excels in creating robust and scalable applications. His expertise supports the backbone of our engineering solutions.</p>
+                    </div>
+                </div>
+                <h3>Our Vision</h3>
+                <p>
+                    We aim to push the boundaries of aerospace technology and contribute to the advancement of space exploration. Our vision is to lead in innovation, ensure safety, and inspire future generations of engineers and scientists.
+                </p>
+                <p>
+                    For more information about our projects and research, please visit the <a href="./news.html">News</a> section or <a href="./contact.html">Contact</a> us directly through the page.
+                </p>
+            </div>
+        </section>
+    </div>
+
+
+</body>
+</html>

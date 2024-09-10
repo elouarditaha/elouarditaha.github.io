@@ -1,0 +1,203 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aviation Artistry</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f0f4f8;
+        }
+        h1 {
+            text-align: center;
+            padding: 30px 0 30px 0;
+            font-family: "Poppins", sans-serif;
+        }
+        .my-5 {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+        }
+
+        .col-md-6 {
+            flex: 0 0 48%; 
+        }
+
+        .col-lg-4 {
+            flex: 0 0 32%;
+        }
+
+
+        .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            overflow: hidden;
+            background-color: #f8f9fa;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-img-top {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            color: #003366;
+            margin-bottom: 0.75rem;
+        }
+
+        .card-text {
+            font-size: 0.9rem;
+            color: #555;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .text-muted {
+            font-size: 0.8rem;
+            margin-bottom: 0.75rem;
+            color: #777;
+        }
+
+        .btn-primary {
+            background-color: #0056b3;
+            border: none;
+            border-radius: 5px;
+            padding: 0.5rem 1rem;
+            color: #fff;
+            font-size: 0.9rem;
+            transition: background-color 0.3s, transform 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background-color: #004080;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .col-md-6, .col-lg-4 {
+                flex: 0 0 100%; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="./Black_And_Blue_Modern_Typography_Travel_Agency_Logo-removebg-preview (1).png" alt="Aerospace Engineering Blog Logo">
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container my-5">
+        <h1 class="text-center mb-4">Latest Aerospace News</h1>
+        <div class="row" id="news-container">
+        </div>
+    </div>
+    
+    <script>
+
+        async function fetchNews() {
+            try {
+                const response = await fetch('https://api.spaceflightnewsapi.net/v4/articles/?limit=10&offset=10');
+                if (!response.ok) {
+                    throw new Error('Failed to fetch news articles');
+                }
+                const data = await response.json();
+                displayNews(data.results);
+            } catch (error) {
+                console.error('Error fetching news:', error);
+            }
+        }
+        function displayNews(articles) {
+            const newsContainer = document.getElementById('news-container');
+            articles.forEach(article => {
+                const newsItem = document.createElement('div');
+                newsItem.className = 'col-md-6 col-lg-4 mb-4';
+
+                const card = document.createElement('div');
+                card.className = 'card h-100';
+
+                const img = document.createElement('img');
+                img.className = 'card-img-top';
+                img.src = article.image_url;
+                img.alt = article.title;
+
+                const cardBody = document.createElement('div');
+                cardBody.className = 'card-body';
+
+                const title = document.createElement('h5');
+                title.className = 'card-title';
+                title.textContent = article.title;
+
+                const summary = document.createElement('p');
+                summary.className = 'card-text';
+                summary.textContent = article.summary;
+
+                const publishedDate = document.createElement('p');
+                publishedDate.className = 'text-muted';
+                publishedDate.textContent = `Published on: ${new Date(article.published_at).toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                })}`;
+
+                const readMore = document.createElement('a');
+                readMore.className = 'btn btn-primary';
+                readMore.href = article.url;
+                readMore.target = '_blank';
+                readMore.textContent = 'Read More';
+                cardBody.appendChild(title);
+                cardBody.appendChild(summary);
+                cardBody.appendChild(publishedDate);
+                cardBody.appendChild(readMore);
+                card.appendChild(img);
+                card.appendChild(cardBody);
+                newsItem.appendChild(card);
+                newsContainer.appendChild(newsItem);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', fetchNews);
+        
+
+    
+    </script>
+    
+</body>
+</html>
